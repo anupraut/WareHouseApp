@@ -1,29 +1,29 @@
 package in.nareshit.raghu.service;
 
-import java.util.List;
-import java.util.Optional;
-
 import in.nareshit.raghu.model.Shipping;
 import in.nareshit.raghu.model.ShippingDtl;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface IShippingService {
 
-	Integer saveShipping(Shipping s);
+    Integer saveShipping(Shipping s);
 
-	void updateShipping(Shipping s);
+    void updateShipping(Shipping s);
 
-	void deleteShipping(Integer id);
+    void deleteShipping(Integer id);
 
-	Optional<Shipping> getOneShipping(Integer id);
+    Optional<Shipping> getOneShipping(Integer id);
 
-	List<Shipping> getAllShippings();
+    List<Shipping> getAllShippings();
 
-	boolean isShippingExist(Integer id);
+    boolean isShippingExist(Integer id);
 
-	// -----------Screen#2--------
-	Integer saveShippingDtl(ShippingDtl dtl);
+    // -----------Screen#2--------
+    Integer saveShippingDtl(ShippingDtl dtl);
 
-	List<ShippingDtl> getAllDtlsByShippingId(Integer shippingId);
+    List<ShippingDtl> getAllDtlsByShippingId(Integer shippingId);
 
-	void updateStatusByShippinDtlId(String status, Integer id);
+    void updateStatusByShippinDtlId(String status, Integer id);
 }

@@ -1,20 +1,18 @@
 package in.nareshit.raghu.repo;
 
-import java.util.List;
-
+import in.nareshit.raghu.model.GrnDtl;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
-import in.nareshit.raghu.model.GrnDtl;
+import java.util.List;
 
-public interface GrnDtlRepository 
-	extends JpaRepository<GrnDtl, Integer>
-{
-	@Query("SELECT dtl FROM GrnDtl dtl INNER JOIN dtl.grn AS grn WHERE grn.id=:grnId")
-	List<GrnDtl> getAllGrnDtlByGrnId(Integer grnId);
+public interface GrnDtlRepository
+        extends JpaRepository<GrnDtl, Integer> {
+    @Query("SELECT dtl FROM GrnDtl dtl INNER JOIN dtl.grn AS grn WHERE grn.id=:grnId")
+    List<GrnDtl> getAllGrnDtlByGrnId(Integer grnId);
 
-	@Modifying
-	@Query("UPDATE GrnDtl SET status=:status WHERE id=:dtlId")
-	void updateGrnDtlStatusById(String status, Integer dtlId);
+    @Modifying
+    @Query("UPDATE GrnDtl SET status=:status WHERE id=:dtlId")
+    void updateGrnDtlStatusById(String status, Integer dtlId);
 }

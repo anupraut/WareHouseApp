@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org/">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
 </head>
 <body>
 
@@ -10,18 +10,18 @@
 <div th:insert="fragments/commonui :: usermenu"></div>
 
 <h3>Warehouse User Type Edit Page!</h3>
-<form th:action="@{/wh/update}" method="POST" th:object="${whUserType}">
+<form method="POST" th:action="@{/wh/update}" th:object="${whUserType}">
 <pre>
-User Id : <input type="text" th:field="*{id}" readOnly/>
+User Id : <input readOnly th:field="*{id}" type="text"/>
 User Type :
-	<input type="radio" th:field="*{userType}" value="Vendor"/> Vendor
-	<input type="radio" th:field="*{userType}" value="Customer"/> Customer
+	<input th:field="*{userType}" type="radio" value="Vendor"/> Vendor
+	<input th:field="*{userType}" type="radio" value="Customer"/> Customer
 
-User Code : <input type="text" th:field="*{userCode}"/>
-User For  : <input type="text" th:field="*{userFor}"  readOnly/>
-User Email: <input type="text" th:field="*{userEmail}" />
+User Code : <input th:field="*{userCode}" type="text"/>
+User For  : <input readOnly th:field="*{userFor}" type="text"/>
+User Email: <input th:field="*{userEmail}" type="text"/>
 User Contact:
-		<textarea th:field="*{userContact}" ></textarea>
+		<textarea th:field="*{userContact}"></textarea>
 User ID Type:
 		<select th:field="*{userIdType}">
 			<option value="">-SELECT-</option>
@@ -30,9 +30,9 @@ User ID Type:
 			<option value="VOTER ID CARD">VOTER ID CARD</option>
 			<option value="OTHER">OTHER</option>
 		</select>
-*IF OTHER : <input type="text" th:field="*{userIfOther}"/>
+*IF OTHER : <input th:field="*{userIfOther}" type="text"/>
 
-ID NUMBER: <input type="text" th:field="*{userIdNum}"/>
+ID NUMBER: <input th:field="*{userIdNum}" type="text"/>
 
 	<input type="submit" value="Edit User"/>		
 </pre>

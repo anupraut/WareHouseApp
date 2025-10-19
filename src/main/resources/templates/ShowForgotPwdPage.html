@@ -2,51 +2,51 @@
 <html xmlns:th="https://www.thymeleaf.org/">
 
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
 </head>
 
 <body>
 <body>
-	<div class="container">
-		<div th:insert="fragments/commonui :: userheader"></div>
+<div class="container">
+    <div th:insert="fragments/commonui :: userheader"></div>
 
-		<div class="card">
+    <div class="card">
 
-			<div class="card-header bg-primary text-white text-center">
-				<h3>USER LOGIN PAGE</h3>
-			</div>
+        <div class="card-header bg-primary text-white text-center">
+            <h3>USER LOGIN PAGE</h3>
+        </div>
 
-			<div class="card-body">
-				<form th:action="@{/user/updateForgotPwd}" method="POST">
+        <div class="card-body">
+            <form method="POST" th:action="@{/user/updateForgotPwd}">
 
-					<div class="row">
-						<div class="col-2">
-							<label for="email">Email Id</label>
-						</div>
-						<div class="col-4">
-							<input type="text" id="email" name="email"
-								class="form-control" placeholder="Enter Email Id"
-								required="required" />
-						</div>
-					</div>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="email">Email Id</label>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" id="email" name="email"
+                               placeholder="Enter Email Id" required="required"
+                               type="text"/>
+                    </div>
+                </div>
 
-				<br/>
-				<input type="submit" value="Generate New Password" class="btn btn-success" />
-				<a th:href="@{/user/showLogin}" class="btn btn-info">Login?</a>
-				</form>
-			</div>
-			<!--card body end-->
+                <br/>
+                <input class="btn btn-success" type="submit" value="Generate New Password"/>
+                <a class="btn btn-info" th:href="@{/user/showLogin}">Login?</a>
+            </form>
+        </div>
+        <!--card body end-->
 
-			<div class="card-footer bg-white" th:if="${message!=null}">
-				<span th:text="${message}"></span>
-			</div>
-			<!-- card footer end -->
+        <div class="card-footer bg-white" th:if="${message!=null}">
+            <span th:text="${message}"></span>
+        </div>
+        <!-- card footer end -->
 
-		</div>
-		<!-- card end -->
+    </div>
+    <!-- card end -->
 
 
-	</div>
+</div>
 </body>
 </html>

@@ -6,16 +6,16 @@ import java.util.stream.Collectors;
 
 public interface MyCollectionUtil {
 
-	// JDK1.8 -- static methods in interface
-	public static Map<Integer,String> convertListToMap(List<Object[]> list) {
-		// JDK 8 - Streams (convert List-> Map)
-		Map<Integer,String> map =
-				list.stream()
-				.collect(
-						Collectors.toMap(
-								ob->Integer.valueOf(ob[0].toString()), 
-								ob->ob[1].toString())
-						);
+    // JDK1.8 -- static methods in interface
+    public static Map<Integer, String> convertListToMap(List<Object[]> list) {
+        // JDK 8 - Streams (convert List-> Map)
+        Map<Integer, String> map =
+                list.stream()
+                        .collect(
+                                Collectors.toMap(
+                                        ob -> Integer.valueOf(ob[0].toString()),
+                                        ob -> ob[1].toString())
+                        );
 		/*Map<Integer,String> map = new LinkedHashMap<>();
 		for(Object[] ob:list) {
 			map.put(
@@ -23,6 +23,6 @@ public interface MyCollectionUtil {
 					ob[1].toString()
 				);
 		}*/
-		return map;
-	}
+        return map;
+    }
 }

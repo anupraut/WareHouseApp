@@ -1,15 +1,14 @@
 package in.nareshit.raghu.repo;
 
-import java.util.List;
-
+import in.nareshit.raghu.model.Document;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import in.nareshit.raghu.model.Document;
+import java.util.List;
 
-public interface DocumentRepository 
-	extends JpaRepository<Document, Integer> {
+public interface DocumentRepository
+        extends JpaRepository<Document, Integer> {
 
-	@Query("SELECT docId,docName FROM Document ")
-	List<Object[]> getDocIdAndNames();
+    @Query("SELECT docId,docName FROM Document ")
+    List<Object[]> getDocIdAndNames();
 }

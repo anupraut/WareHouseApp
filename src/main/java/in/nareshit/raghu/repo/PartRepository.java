@@ -1,16 +1,14 @@
 package in.nareshit.raghu.repo;
 
-import java.util.List;
-
+import in.nareshit.raghu.model.Part;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import in.nareshit.raghu.model.Part;
+import java.util.List;
 
-public interface PartRepository 
-	extends JpaRepository<Part, Integer> 
-{
+public interface PartRepository
+        extends JpaRepository<Part, Integer> {
 
-	@Query("SELECT id, partCode  FROM Part")
-	List<Object[]> getPartIdAndCode();
+    @Query("SELECT id, partCode  FROM Part")
+    List<Object[]> getPartIdAndCode();
 }
